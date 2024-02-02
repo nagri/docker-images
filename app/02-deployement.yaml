@@ -16,6 +16,7 @@ spec:
       labels:
         app: nginx
     spec:
+      serviceAccount: service-gar
       containers:
         - name: nginx
           image: us-central1-docker.pkg.dev/nagri2909/nagri2909/container/nginx:v0.1.3
