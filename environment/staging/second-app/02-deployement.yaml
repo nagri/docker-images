@@ -19,8 +19,9 @@ spec:
         prometheus.io/scrape: "true"
         prometheus.io/port: "9113"
     spec:
+      serviceAccount: service-gar
       containers:
         - name: nginx
-          image: nagri/nginx:1.0.2
+          image: us-central1-docker.pkg.dev/nagri2909/nagri2909/container/nginx:1.23.3
           ports:
             - containerPort: 80
