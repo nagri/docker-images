@@ -14,7 +14,7 @@ spec:
       #   ] # replace with your dockerhub account
       args: [ "--context=git@github.com:nagri/docker-images.git",
       "--context-sub-path=docker-images/docker-files/nginx/",
-      "--dockerfile=/workspace/docker-images/docker-files/nginx/Dockerfile",
+      "--dockerfile=Dockerfile",
       "--destination=nagri/nginx:xyz" ]
       volumeMounts:
         - name: kaniko-secret
