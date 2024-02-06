@@ -12,7 +12,8 @@ spec:
       #     "--context=dir://workspace",
       #     "--destination=nagri/dagri",
       #   ] # replace with your dockerhub account
-      args: [ "--context=git@github.com:nagri/docker-images.git",
+      args: [ "--context=git@github.com:nagri/docker-images.git#refs/heads/main",
+      "--verbosity=debug",
       "--context-sub-path=/workspace/docker-images/docker-files/nginx/",
       "--dockerfile=Dockerfile",
       "--destination=nagri/nginx:xyz" ]
