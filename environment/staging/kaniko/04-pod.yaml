@@ -10,25 +10,19 @@ spec:
       command: ["sh", "-c"]
       args:
         - |
-          sleep 3600
+          apk add --no-cache git &&
+          git clone https://github.com/nagri/docker-images.git /workspace
       volumeMounts:
         - name: dockerfile-storage
           mountPath: /workspace
   containers:
     - name: kaniko
       image: gcr.io/kaniko-project/executor:latest
-      # args: [
-      #     "--dockerfile=/workspace/dockerfile",
-      #     "--context=dir://workspace",
-      #     "--destination=nagri/dagri",
-      #   ] # replace with your dockerhub account
-      # args: [ "--context=git@github.com:nagri/docker-images.git#refs/heads/main",
-      # "--verbosity=debug",
-      # "--context-sub-path=/workspace/docker-images/docker-files/nginx/",
-      # "--dockerfile=Dockerfile",
-      # "--destination=nagri/nginx:xyz" ]
-
-      args: ["ls", "-lah", "&&", "pwd"]
+      args: [
+          "--dockerfile=/workspace/docker-images/docker-files/nginx/dockerfile",
+          "--context=dir://workspace",
+          "--destination=nagri/dagri",
+        ] # replace with your dockerhub account
       volumeMounts:
         - name: kaniko-secret
           mountPath: /kaniko/.docker
