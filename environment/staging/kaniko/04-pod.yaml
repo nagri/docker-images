@@ -13,7 +13,7 @@ spec:
       #     "--destination=nagri/dagri",
       #   ] # replace with your dockerhub account
       args: [ "--context=git@github.com:nagri/docker-images.git",
-      "--context-sub-path=/workspace/docker-images/docker-files/nginx/",
+      "--context-sub-path=docker-images/docker-files/nginx/",
       "--dockerfile=/workspace/docker-images/docker-files/nginx/Dockerfile",
       "--destination=nagri/nginx:xyz" ]
       volumeMounts:
