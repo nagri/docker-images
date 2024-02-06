@@ -4,6 +4,16 @@ metadata:
   name: kaniko
   namespace: kaniko
 spec:
+  initContainers:
+    - name: git-clone
+      image: alpine
+      command: ["sh", "-c"]
+      args:
+        - |
+          sleep 3600
+      volumeMounts:
+        - name: workspace
+          mountPath: /workspace
   containers:
     - name: kaniko
       image: gcr.io/kaniko-project/executor:latest
