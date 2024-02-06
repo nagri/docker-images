@@ -21,7 +21,7 @@ spec:
     - name: kaniko
       image: gcr.io/kaniko-project/executor:latest
       args:
-        - "--context=/ocker-images/docker-files/nginx"
+        - "--context=/workspace/docker-images/docker-files/nginx"
         - "--insecure"
         - "--destination=nagri/dagri"
       volumeMounts:
