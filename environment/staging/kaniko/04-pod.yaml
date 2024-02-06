@@ -11,7 +11,8 @@ spec:
       args:
         - |
           apk add --no-cache git &&
-          git clone https://github.com/nagri/docker-images.git /workspace
+          cd /workspace
+          git clone https://github.com/nagri/docker-images.git
       volumeMounts:
         - name: dockerfile-storage
           mountPath: /workspace
