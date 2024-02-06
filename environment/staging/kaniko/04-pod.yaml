@@ -12,7 +12,7 @@ spec:
         - |
           sleep 3600
       volumeMounts:
-        - name: workspace
+        - name: dockerfile-storage
           mountPath: /workspace
   containers:
     - name: kaniko
